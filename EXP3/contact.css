@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #4b6ea0, #305d97);
+    color: #333;
+    text-align: center;
+}
+
+
+nav {
+    background-color: #1e90ff;
+    padding: 15px 0;
+}
+
+nav a {
+    color: rgb(218, 123, 123);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 20px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #146ec2;
+}
+
+
+.contact-card {
+    max-width: 500px;
+    margin: 80px auto;
+    background: rgb(207, 165, 165);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h2 {
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    font-size: 16px;
+    margin: 15px 0;
+}

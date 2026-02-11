@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #374b68, #8da8ca);
+    color: #f87878;
+    text-align: center;
+}
+
+
+nav {
+    background-color: #1e90ff;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 20px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #cce6ff;
+}
+
+
+.skills-card {
+    max-width: 600px;
+    margin: 80px auto;
+    background: rgb(221, 192, 192);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.skills-card h2 {
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.skills-card p {
+    font-size: 16px;
+    margin: 15px 0;
+}
