@@ -1,95 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Calculator</title>
+    <title>Advanced Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+
+        input {
+            width: 250px;
+            height: 35px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+            border-radius: 50px;
+            color: white;
+        }
+
+        .trig-btn {
+            background-color: #ffd700;
+        }
+        .calculator-frame {
+    display: inline-block;      
+    background-color: #fff;      
+    border: 2px solid #2e86de;  
+    border-radius: 15px;         
+    padding: 20px 30px;          
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3); 
+    margin-top: 20px;            
+}
+
+
+    </style>
 </head>
-<style>
-    body{
-        text-align: center;
-        font-family: Arial, sans-serif;
-        background-color:pink;
- }
-    input {
-        width: 200px;
-        height: 30px;
-        font-size: 18px;
-        text-align: right;
-        margin-bottom: 20px;
-    }
-
-    button {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-        margin: 5px;
-        cursor:pointer;
-    }
-
-    button:hover{
-        background-color:blueviolet;
-        border-radius: 50px;
-    }
-
-</style>
 <body>
     <nav style="background-color:#d6eaff; padding:12px; text-align:center;">
-      <a href="index.html" style="text-decoration:none; font-weight:bold; color:#2e86de; margin:0 10px;">simple calculator</a> 
-      <a href="calculator.html" style="text-decoration:none; font-weight:bold; color:#2e86de; margin:0 10px;">calculator with some css</a> 
+        <a href="index.html" style="text-decoration:none; font-weight:bold; color:#2e86de; margin:0 10px;">Simple Calculator</a> 
+        <a href="calculator.html" style="text-decoration:none; font-weight:bold; color:#2e86de; margin:0 10px;">Calculator with CSS</a> 
     </nav>
 
-<h2>Simple Calculator</h2>
+    <h2>Scientific Calculator</h2>
 
-<input type="text" id="display" readonly>
-<br><br>
+    <input type="text" id="display" readonly>
+    <br><br>
 
-<button onclick="appendValue('7')">7</button>
-<button onclick="appendValue('8')">8</button>
-<button onclick="appendValue('9')">9</button>
-<button onclick="appendValue('/')">/</button>
+    
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('/')">/</button>
+    <br>
 
-<br><br>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('*')">*</button>
+    <br>
 
-<button onclick="appendValue('4')">4</button>
-<button onclick="appendValue('5')">5</button>
-<button onclick="appendValue('6')">6</button>
-<button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('-')">-</button>
+    <br>
 
-<br><br>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="calculate()">=</button>
+    <br>
 
-<button onclick="appendValue('1')">1</button>
-<button onclick="appendValue('2')">2</button>
-<button onclick="appendValue('3')">3</button>
-<button onclick="appendValue('-')">-</button>
+    
 
-<br><br>
+    
+    <button class="trig-btn" onclick="applyFunction('Math.sin')">sin</button>
+    <button class="trig-btn" onclick="applyFunction('Math.cos')">cos</button>
+    <button class="trig-btn" onclick="applyFunction('Math.tan')">tan</button>
+    <button class="trig-btn" onclick="applyFunction('Math.log')">log</button><br><br>
+    <button class="trig-btn" onclick="applyFunction('Math.sqrt')">√</button>
+    <button class="trig-btn" onclick="appendValue('*Math.PI')">π</button>
+    <button class="trig-btn" onclick="appendValue('*Math.E')">e</button>
 
-<button onclick="appendValue('0')">0</button>
-<button onclick="appendValue('.')">.</button>
-<button onclick="appendValue('+')">+</button>
-<button onclick="calculate()">=</button>
-
-<br><br>
-
-<button onclick="clearDisplay()">Clear</button>
-
-<script>
-    function appendValue(value) {
-        document.getElementById("display").value += value;
-    }
-
-    function calculate() {
-        try {
-            document.getElementById("display").value =
-                eval(document.getElementById("display").value);
-        } catch {
-            alert("Invalid Expression");
+    <button onclick="clearDisplay()">Clear</button>
+    <br><br>
+    <script>
+        function appendValue(value) {
+            document.getElementById("display").value += value;
         }
-    }
 
-    function clearDisplay() {
-        document.getElementById("display").value = "";
-    }
-</script>
+        function applyFunction(func) {
+            let current = document.getElementById("display").value;
+            if(current) {
+                document.getElementById("display").value = `${func}(${current})`;
+            }
+        }
 
+        function calculate() {
+            try {
+                
+                let result = eval(document.getElementById("display").value);
+                if (typeof result === "number" && !isNaN(result)) {
+                    document.getElementById("display").value = result;
+                } else {
+                    alert("Invalid Expression");
+                }
+            } catch (err) {
+                alert("Invalid Expression");
+            }
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+    </script>
 </body>
 </html>
