@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling - 2nd Year CS Notes</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            margin: 0; 
+            padding: 20px; 
+            line-height: 1.6; 
+        }
+        header { 
+            text-align: center; 
+            background-color: #2c3e50; 
+            color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        .mechanism { 
+            border-left: 5px solid #3498db; 
+            padding-left: 15px; 
+            margin-bottom: 30px; 
+            background: #ecf0f1; 
+            padding: 20px; 
+            border-radius: 0 8px 8px 0; 
+        }
+        h2 { color: #2980b9; margin-top: 0; }
+        button { 
+            background-color: #e74c3c; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 10px; 
+        }
+        button:hover { background-color: #c0392b; }
+        code { 
+            background-color: #dcdde1; 
+            padding: 2px 5px; 
+            border-radius: 3px; 
+            font-family: monospace; 
+        }
+        .output-box { 
+            margin-top: 15px; 
+            padding: 10px; 
+            background: #27ae60; 
+            color: white; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            min-height: 24px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Understanding Event Handling</h1>
+        
+        </header>
+
+        
+  
+        <div class="mechanism">
+            <h2>1. Inline HTML Attributes</h2>
+            <p>This is the oldest method where we add the JavaScript directly inside the HTML tag (e.g., <code>onclick="doSomething()"</code>). It is generally considered bad practice today because it mixes HTML structure with JavaScript logic.</p>
+            <button onclick="document.getElementById('out1').innerText = 'Inline event triggered!'">Click Me (Inline)</button>
+            <div id="out1" class="output-box">Waiting for action...</div>
+        </div>
+
+   
+        <div class="mechanism">
+            <h2>2. DOM Element Properties</h2>
+            <p>Here, we select the element in JavaScript and assign a function to its event property (like <code>element.onclick = function</code>). It's cleaner than inline handlers, but you can only assign one function per event type on a single element.</p>
+            <button id="btn2">Click Me (DOM Property)</button>
+            <div id="out2" class="output-box">Waiting for action...</div>
+        </div>
+
+   
+        <div class="mechanism">
+            <h2>3. Event Listeners (Best Practice)</h2>
+            <p>The <code>addEventListener()</code> method is the modern standard for handling events. It allows you to attach multiple listeners to a single element without overwriting existing ones, giving you the most control over how events propagate.</p>
+            <button id="btn3">Click Me (Event Listener)</button>
+            <div id="out3" class="output-box">Waiting for action...</div>
+        </div>
+    </div>
+
+    <script>
+       
+        const btn2 = document.getElementById('btn2');
+        const out2 = document.getElementById('out2');
+        
+        btn2.onclick = function() {
+            out2.innerText = 'DOM Property event triggered!';
+            out2.style.backgroundColor = '#2980b9';
+        };
+
+        const btn3 = document.getElementById('btn3');
+        const out3 = document.getElementById('out3');
+        
+        btn3.addEventListener('click', () => {
+            out3.innerText = 'Event Listener triggered! (Best Practice)';
+            out3.style.backgroundColor = '#8e44ad';
+        });
+    </script>
+</body>
+</html>
+
+
