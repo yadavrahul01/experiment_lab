@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <style>
+    .navbar {
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .navbar a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #575757;
+    }
+    </style>
+</head>
+
+<body>
+
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+</div>
+
+<h2>Registration Form</h2>
+
+<form action="register.php" method="POST">
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Confirm Password: <input type="password" name="confirm_password"><br><br>
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>
