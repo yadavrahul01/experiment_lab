@@ -3,12 +3,12 @@
 HostelDrop is a full-stack, web application built to solve a real problem for students: emergency late-night delivery of snacks,
 beverages, and daily essentials directly to hostel rooms.
  🚀 Features
- Dynamic Storefront:** Browse products by category (Snacks, Beverages, Essentials).
-Live Search Bar:** Instantly filter snacks using JavaScript.
-Interactive Cart System:** Add items, calculate totals, and place orders seamlessly.
-Toast Notifications:** Clean, modern popup alerts for user feedback.
-Admin Dashboard:** A secure backend interface to view incoming orders and read student messages in real-time.
-Mobile-First Design:** Fully responsive layout optimized for smartphone browsers.
+ Dynamic Storefront: Browse products by category (Snacks, Beverages, Essentials).
+Live Search Bar: Instantly filter snacks using JavaScript.
+Interactive Cart System:Add items, calculate totals, and place orders seamlessly.
+Toast Notifications: Clean, modern popup alerts for user feedback.
+Admin Dashboard: A secure backend interface to view incoming orders and read student messages in real-time.
+Mobile-First Design: Fully responsive layout optimized for smartphone browsers.
 
  💻 Tech Stack
 Frontend: HTML, CSS (Flexbox/Grid),  JavaScript , Fetch API
